@@ -38,6 +38,8 @@ class PlanillasController extends Controller
        $planillas = Http::post('http://localhost:3000/aportaciones/planillas', [
            'OPERACION'=> $request->OPERACION,
            'COD_AFILIADO' => $request->COD_AFILIADO,
+           'NUM_AFILIADO' => $request->NUM_AFILIADO,
+           'NOM_COMPLETO' => $request->NOM_COMPLETO,
            'FEC_PAGO' => $request->FEC_PAGO,
            'DENOMINACION'=> $request->DENOMINACION,
            'VAL_PAGADO' => $request->VAL_PAGADO,
@@ -69,6 +71,8 @@ class PlanillasController extends Controller
    {
     $planillas = planillas::find($COD_PLANILLA);
     $planillas ->COD_AFILIADO=$request->input('COD_AFILIADO');
+    $planillas ->NUM_AFILIADO=$request->input('NUM_AFILIADO');
+    $planillas ->NOM_COMPLETO=$request->input('NOM_COMPLETO');
     $planillas ->FEC_PAGO=$request->input('FEC_PAGO');
     $planillas ->DENOMINACION=$request->input('DENOMINACION');
     $planillas ->VAL_PAGADO=$request->input('VAL_PAGADO');
