@@ -24,6 +24,7 @@
 
 <Table class="table table-sm table-striped table-hover">
 <thead class="bg-primary text-white" style="background-color: #8B1E06 !important;">
+ 
  <tr>
     <td class="border border-dark">CODIGO PERSONA</td>
     <td class="border border-dark">NUMERO DE IDENTIDAD</td>
