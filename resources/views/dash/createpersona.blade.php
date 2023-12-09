@@ -91,7 +91,7 @@
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="SEX_PERSONA">SEXO</label>
-                                                <select class="form-control" id="SEX_PERSONA" name="SEX_PERSONA">
+                                                <select class="form-control" id="SEX_PERSONA" name="SEX_PERSONA" required>
                                                   <option>MASCULINO</option>
                                                   <option>FEMENINO</option>
                                                 </select>

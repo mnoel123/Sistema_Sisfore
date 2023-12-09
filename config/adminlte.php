@@ -344,11 +344,7 @@ return [
             'icon' => 'fas fa-regular fa-file',
 
             'submenu' => [
-                [
-                    'text' => 'Planillas',
-                    'url'  => 'planillas',
-                    'icon' =>'fas fa-solid fa-table',
-                ],
+            
                 [
                     'text'    => 'Gestionar Planillas',
                     'icon'=> 'fas fa-solid fa-file-excel',

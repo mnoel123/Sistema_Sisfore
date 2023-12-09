@@ -74,11 +74,10 @@ class PersonasController extends Controller
            'FEC_REGISTRO'=> $request->FEC_REGISTRO,
        ]); 
        
-          return redirect()-> route('personas')->with('agregado','los regristros fue agregados correctamente'); 
+          return redirect()-> route('personas')->with('agregado','los registros fueron agregados correctamente'); 
 
           // Obténer la última IP del usuario y guárdarla en el modelo
-$lastIp = $request->ip();
-$tuModelo->update(['IP_ULT_ACCESS' => $lastIp]);
+
         
    }
 
@@ -104,7 +103,9 @@ $tuModelo->update(['IP_ULT_ACCESS' => $lastIp]);
         'NUM_IDENTIDAD'=> $request->NUM_IDENTIDAD,
         'NOM_PERSONA'=> $request->NOM_PERSONA,
         'APE_PERSONA'=> $request->APE_PERSONA,
+
         'SEX_PERSONA'=> $request->SEX_PERSONA,
+
         'FEC_NACIMIENTO'=> $request->FEC_NACIMIENTO,
         'TIP_ESTADO'=> $request->TIP_ESTADO,
         'ESTADO_CIVIL'=> $request->ESTADO_CIVIL,
@@ -135,7 +136,7 @@ $tuModelo->update(['IP_ULT_ACCESS' => $lastIp]);
         'FEC_REGISTRO'=> $request->FEC_REGISTRO,
 ]); 
 
-       return redirect()-> route('personas')->with('editado','los registros fue editado correctamente'); 
+       return redirect()-> route('personas')->with('editado','los registros fueron editado correctamente'); 
    }
 
    /**
