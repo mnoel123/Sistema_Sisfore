@@ -42,6 +42,13 @@ return view('dash.gestionar')->with('planillas',$planillas);
     }
 
 
+
+
+
+
+
+
+
 public function eliminargestionar($COD_PLANILLA)
 {
     $planillas=planillas::findOrFail($COD_PLANILLA);
