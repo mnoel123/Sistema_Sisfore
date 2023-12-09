@@ -19,14 +19,14 @@
                                 
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-6">
+                                    <div class="col-md-6"></div>
+                                    
                                             <div class="form-group">
                                                 <label for="OPERACION">OPERACION</label>
                                                 <select class="form-control" id="OPERACION" name="OPERACION" required>
                                                     
                                                 <option value="I" {{ old('OPERACION') == 'I' ? 'selected' : '' }}>Insertar</option>
                                                 <option value="U" {{ old('OPERACION') == 'U' ? 'selected' : '' }}>Actualizar</option>
-                                                <option value="D" {{ old('OPERACION') == 'D' ? 'selected' : '' }}>Eliminar</option>
                                                 </select>
                                                 <div class="valid-feedback">DATO VALIDO.</div>
                                                 <div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS. INTRODUZCA SOLO LETRAS</div>
@@ -34,23 +34,12 @@
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
-                                        </div>
                                         
-                                        <div class="col-6">
-                                            <div class="form-group">
-                                                <label for="COD_PERSONA">CODIGO </label>
-                                                <input type="text" class="form-control" id="COD_PERSONA" name="COD_PERSONA" placeholder="" value="{{ old('COD_PERSONA') }}" required>
-                                                <div class="valid-feedback">DATO VALIDO.</div>
-                                                <div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS. INTRODUZCA SOLO NUMEROS</div>
-                                                @error('COD_PERSONA')
-                                                    <span class="text-danger">{{ $message }}</span>
-                                                @enderror
-                                            </div>
-                                        </div>
-                                    </div> 
+                                        
 
 
                                         <div class="col-6">
+                                        <div class="col-md-6"></div>
                                             <div class="form-group">
                                                 <label for="NUM_IDENTIDAD">NUMERO DE IDENTIDAD</label>
                                                 <input type="text" class="form-control @error('NUM_IDENTIDAD') is-invalid @enderror" id="NUM_IDENTIDAD" name="NUM_IDENTIDAD" placeholder="" value="{{ old('NUM_IDENTIDAD') }}" maxlength="15" required>
@@ -89,7 +78,7 @@
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="APE_PERSONA">APELLIDOS</label>
-                                                <input type="text" class="form-control" id="VAL_PAGADO" name="APE_PERSONA" placeholder="" value="{{ old('APE_PERSONA') }}" required>
+                                                <input type="text" class="form-control" id="APE_PERSONA" name="APE_PERSONA" placeholder="" value="{{ old('APE_PERSONA') }}" required>
                                                 <div class="valid-feedback">DATO VALIDO.</div>
                                                 <div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS. INGRESE SOLO LETRAS</div>
                                                 @error('APE_PERSONA')
@@ -102,7 +91,7 @@
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="SEX_PERSONA">SEXO</label>
-                                                <select name="SEX_PERSONA">
+                                                <select class="form-control" id="SEX_PERSONA" name="SEX_PERSONA">
                                                   <option>MASCULINO</option>
                                                   <option>FEMENINO</option>
                                                 </select>
@@ -131,7 +120,7 @@
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="TIP_ESTADO">TIPO DE ESTADO</label>
-                                                <select name="SEX_PERSONA">
+                                                <select class="form-control" id="TIP_ESTADO" name="TIP_ESTADO">
                                                   <option>ACTIVO</option>
                                                   <option>INACTIVO</option>
                                                 </select>
@@ -146,7 +135,7 @@
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="ESTADO_CIVIL">ESTADO CIVIL</label>
-                                                <select name="SEX_PERSONA">
+                                                <select class="form-control" id="ESTADO_CIVIL" name="ESTADO_CIVIL">
                                                   <option>CASADO</option>
                                                   <option>SOLTERO</option>
                                                   <option>UNION LIBRE</option>
@@ -163,7 +152,7 @@
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="EMAIL">CORREO ELECTRONICO</label>
-                                                <input type="email" class="form-control @error('EMAIL') is-invalid @enderror" id="EMAIL" name="EMAIL" placeholder="" value="{{ old('EMAIL') }}" required>
+                                                <input type="email" class="form-control @error('EMAIL') is-invalid @enderror" id="EMAIL" name="EMAIL" placeholder="" value="{{ old('EMAIL') }}">
         
                                                 @error('EMAIL')
                                                    <div class="invalid-feedback">{{ $message }}</div>
@@ -176,22 +165,11 @@
                                         </div>
 
 
-                                        <div class="col-6">
-                                            <div class="form-group">
-                                                <label for="COD_TELEFONO">CODIGO DEL TELEFONO</label>
-                                                <input type="text" class="form-control" id="COD_TELEFONO" name="COD_TELEFONO" placeholder="" value="{{ old('COD_TELEFONO') }}" required|numeric>
-                                                <div class="valid-feedback">DATO VALIDO.</div>
-                                                <div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS. INGRESAR SOLO NUMEROS</div>
-                                                @error('TIP_ESTADO')
-                                                    <span class="text-danger">{{ $message }}</span>
-                                                @enderror
-                                            </div>
-                                        </div> 
 
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="TIP_TELEFONO">TIPO DE TELEFONO</label>
-                                                <select name="TIP_TELEFONO">
+                                                <select class="form-control" id="TIP_TELEFONO" name="TIP_TELEFONO">
                                                   <option>CELULAR</option>
                                                   <option>FIJO</option>
                                                 </select>
@@ -218,7 +196,7 @@
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="IND_TELEFONO">ESTADO DEL TELEFONO</label>
-                                                <select name="IND_TELEFONO">
+                                                <select class="form-control" id="IND_TELEFONO" name="IND_TELEFONO">
                                                   <option>ACTIVO</option>
                                                   <option>INACTIVO</option>
                                                 </select>
@@ -242,22 +220,11 @@
                                             </div>
                                         </div>
 
-                                         <div class="col-6">
-                                            <div class="form-group">
-                                                <label for="COD_DIRECCION">CODIGO DE DIRECCION</label>
-                                                <input type="text" class="form-control" id="COD_DIRECCION" name="COD_DIRECCION" placeholder="" value="{{ old('COD_DIRECCION') }}" required|numeric>
-                                                <div class="valid-feedback">DATO VALIDO.</div>
-                                                <div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS. INGRESE SOLO NUMEROS</div>
-                                                @error('COD_DIRECCION')
-                                                    <span class="text-danger">{{ $message }}</span>
-                                                @enderror
-                                            </div>
-                                        </div> 
 
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="DEPARTAMENTO">DEPARTAMENTO</label>
-                                                <select name="DEPARTAMENTO" >
+                                                <select class="form-control" id="DEPARTAMENTO" name="DEPARTAMENTO" >
                                                   <option>Atlántida</option>
                                                   <option>Choluteca</option>
                                                   <option>Colón</option>
@@ -348,7 +315,7 @@
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="COD_BENEFICIARIO">CODIGO DEL BENEFICIARIO</label>
-                                                <input type="text" class="form-control" id="TIP_ESTADO" name="TIP_ESTADO" placeholder="" value="{{ old('TIP_ESTADO') }}" required>
+                                                <input type="text" class="form-control" id="COD_BENEFICIARIO" name="COD_BENEFICIARIO" placeholder="" value="{{ old('COD_BENEFICIARIO') }}" required>
                                                 <div class="valid-feedback">DATO VALIDO.</div>
                                                 <div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS.</div>
                                                 @error('COD_BENEFICIARIO')
@@ -413,7 +380,7 @@
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="TIP_USUARIO">TIPO USUARIO</label>
-                                                <select name="TIP_USUARIO">
+                                                <select class="form-control" id="TIP_USUARIO" name="TIP_USUARIO">
                                                   <option>ADMINISTRADOR</option>
                                                   <option>COMISIONADO</option>
                                                   <option>DIRECTIVO</option>
@@ -429,7 +396,7 @@
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="IND_USUARIO">ESTADO DEL USUARIO</label>
-                                                <select name="SEX_PERSONA">
+                                                <select class="form-control" id="IND_USUARIO" name="IND_USUARIO">
                                                   <option>ACTIVO</option>
                                                   <option>INACTIVO</option>
                                                 </select>
@@ -453,46 +420,6 @@
                                             </div>
                                         </div>
 
-                                         <div class="col-6">
-                                            <div class="form-group">
-                                                <label for="IP_ULT_ACCESS">ULTIMO IP CON EL QUE SE INGRESO</label>
-                                                <input type="text" class="form-control" id="IP_ULT_ACCESS" name="IP_ULT_ACCESS" placeholder="" value="{{ old('IP_ULT_ACCESS') }}" required>
-                                                <div class="valid-feedback">DATO VALIDO.</div>
-                                                <div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS.</div>
-                                                @error('IP_ULT_ACCESS')
-                                                    <span class="text-danger">{{ $message }}</span>
-                                                @enderror
-                                            </div>
-                                        </div> 
-
-                                        <!-- <div class="col-6">
-                                            <p>Último IP de Acceso: {{ auth()->user()->IP_ULT_ACCESS }}</p>
-                                        </div> -->
-
-
-                                        <div class="col-6">
-                                            <div class="form-group">
-                                                <label for="IP_ULT_ACCESS">IP_ULT_ACCESS</label>
-                                                <input type="newdate" class="form-control" id="FEC_REGISTRO" name="FEC_REGISTRO" placeholder="" value="{{ old('FEC_REGISTRO') }}" required>
-                                                <div class="valid-feedback">DATO VALIDO.</div>
-                                                <div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS.</div>
-                                                @error('FEC_REGISTRO')
-                                                    <span class="text-danger">{{ $message }}</span>
-                                                @enderror
-                                            </div>
-                                        </div>
-
-                                        <div class="col-6">
-                                            <div class="form-group">
-                                                <label for="FEC_REGISTRO">FEC_REGISTRO</label>
-                                                <input type="newdate" class="form-control" id="FEC_REGISTRO" name="FEC_REGISTRO" placeholder="" value="{{ old('FEC_REGISTRO') }}" required>
-                                                <div class="valid-feedback">DATO VALIDO.</div>
-                                                <div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS.</div>
-                                                @error('FEC_REGISTRO')
-                                                    <span class="text-danger">{{ $message }}</span>
-                                                @enderror
-                                            </div>
-                                        </div>
 
                                                                                                                         
                                     </div>
