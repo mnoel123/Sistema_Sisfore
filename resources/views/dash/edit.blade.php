@@ -2,7 +2,7 @@
 <div class="modal fade" id="Modal-edit-{{$planillas['COD_PLANILLA']}}" tabindex="-1" role="dialog" aria-labelledby="Modal-edit-{{$planillas['COD_PLANILLA']}}" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header" style="background-color: #8B1E06 !important;">
         <h5 class="modal-title" id="Modal-edit-{{$planillas['COD_PLANILLA']}}">Editar Planilla</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -16,7 +16,7 @@
 
           <div class="col-md-12" novalidate><br>
             <div class="card card-primary">
-              <div class="card-header">
+              <div class="card-header" style="background-color: #8B1E06 !important;">
                 <h3 class="card-title">EDITAR PLANILLAS</h3>
               </div>
               <div class="card-body">
@@ -49,6 +49,30 @@
                       @enderror
                     </div>
                   </div>
+                  <div class="col-6">
+                    <!-- Campo CODIGO AFILIADO -->
+                    <div class="form-group">
+                      <label for="">NUMERO AFILIADO</label>
+                      <input type="text" class="form-control" id="NUM_AFILIADO" name="NUM_AFILIADO" placeholder="" value="{{ $planillas['NUM_AFILIADO'] }}" required>
+                      <div class="valid-feedback">DATO VALIDO.</div>
+                      <div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS. INTRODUZCA SOLO NUMEROS</div>
+                      @error('COD_AFILIADO')
+                      <span class="text-danger">{{ $message }}</span>
+                      @enderror
+                    </div>
+                  </div>
+                  <div class="col-6">
+                  <!-- Campo NOMBRE COMPLETO -->
+                  <div class="form-group">
+                    <label for="">NOMBRE COMPLETO</label>
+                    <input type="text" class="form-control" id="NOM_COMPLETO" name="NOM_COMPLETO" placeholder="" value="{{ $planillas['NOM_COMPLETO'] }}" required>
+                    <div class="valid-feedback">DATO VALIDO.</div>
+                    <div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS. INTRODUZCA SOLO LETRAS</div>
+                    @error('DENOMINACION')
+                    <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                  </div>
+                </div>
                   <div class="col-6">
                     <!-- Campo FECHA DE PAGO -->
                     <div class="form-group">
