@@ -13,6 +13,8 @@ class planillas extends Model
     protected $fillable =[
     'COD_PLANILLA',
     'COD_AFILIADO',
+    'NUM_AFILIADO',
+    'NOM_COMPLETO',
     'FEC_PAGO',
     'DENOMINACION',
     'VAL_PAGADO',
