@@ -23,11 +23,13 @@
 <div class="table-responsive">
 
 
-<table id="planillas" Table class="table table-striped table-bordered table-hover rounded">
- <thead class="table-success bg-primary text-white" style="background-color: #8B1E06 !important;">
+<table id="planillas" Table class="table table-striped table-bordered table-hover rounded"  >
+ <thead class="bg-primary text-white" style="background-color: #8B1E06 !important;">
  <tr>
     <td class="border border-dark">CODIGO PLANILLA</td>
     <td class="border border-dark">CODIGO AFILIADO</td>
+    <td class="border border-dark">NUMERO AFILIADO</td>
+    <td class="border border-dark">NOMBRE COMPLETO</td>
     <td class="border border-dark">FECHA DE PAGO</td>
     <td class="border border-dark">DENOMINACION</td>
     <td class="border border-dark">VALOR PAGADO</td>
@@ -42,6 +44,8 @@
 
                                 <td class="inner-table text-center" >{{$planillas["COD_PLANILLA"]}}</td>
                                 <td class="inner-table text-center">{{$planillas["COD_AFILIADO"]}}</td>
+                                <td class="inner-table text-center">{{$planillas["NUM_AFILIADO"]}}</td>
+                                <td class="inner-table text-center">{{$planillas["NOM_COMPLETO"]}}</td>
                                 <td class="inner-table text-center">{{$planillas["FEC_PAGO"]}}</td>
                                 <td class="inner-table text-center">{{$planillas["DENOMINACION"]}}</td>
                                 <td class="inner-table text-center">{{$planillas["VAL_PAGADO"]}}</td>
@@ -55,12 +59,13 @@
                                 <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-delete-{{$planillas['COD_PLANILLA']}}">
                                    Eliminar
                                     </button>
-                                </td>
-                            </tr>
                             @include('dash.edit')
                             @include('dash.delete')
+                            </td>
+                            </tr>
                     @endforeach
                     </tbody>
+               
                      </table>
      </div>
 </div>
