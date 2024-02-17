@@ -350,6 +350,11 @@ return [
                     'icon'=> 'fas fa-solid fa-file-excel',
                     'url'     => 'gestionar',
                 ],
+                // [
+                //     'text'    => 'planillas',
+                //     'icon'=> 'fas fa-solid fa-file-excel',
+                //     'url'     => 'planillas',
+                //= ],
             ],
         ],
         [

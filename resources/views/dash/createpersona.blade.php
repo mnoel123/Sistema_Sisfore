@@ -21,7 +21,7 @@
                                     <div class="row">
                                     <div class="col-md-6"></div>
                                     
-                                            <div class="form-group">
+                                    <div class="form-group">
                                                 <label for="OPERACION">OPERACION</label>
                                                 <select class="form-control" id="OPERACION" name="OPERACION" required>
                                                     
@@ -117,10 +117,10 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-6">
+                                    <div class="col-6">
                                             <div class="form-group">
                                                 <label for="TIP_ESTADO">TIPO DE ESTADO</label>
-                                                <select class="form-control" id="TIP_ESTADO" name="TIP_ESTADO">
+                                                <select class="form-control" id="TIP_ESTADO" name="TIP_ESTADO" required>
                                                   <option>ACTIVO</option>
                                                   <option>INACTIVO</option>
                                                 </select>
@@ -135,7 +135,7 @@
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="ESTADO_CIVIL">ESTADO CIVIL</label>
-                                                <select class="form-control" id="ESTADO_CIVIL" name="ESTADO_CIVIL">
+                                                <select class="form-control" id="ESTADO_CIVIL" name="ESTADO_CIVIL" required>
                                                   <option>CASADO</option>
                                                   <option>SOLTERO</option>
                                                   <option>UNION LIBRE</option>
@@ -169,7 +169,7 @@
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="TIP_TELEFONO">TIPO DE TELEFONO</label>
-                                                <select class="form-control" id="TIP_TELEFONO" name="TIP_TELEFONO">
+                                                <select class="form-control" id="TIP_TELEFONO" name="TIP_TELEFONO" required>
                                                   <option>CELULAR</option>
                                                   <option>FIJO</option>
                                                 </select>
@@ -180,6 +180,7 @@
                                                 @enderror
                                             </div>
                                         </div>
+
 
                                         <div class="col-6">
                                             <div class="form-group">
@@ -193,10 +194,11 @@
                                             </div>
                                         </div>
 
+
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="IND_TELEFONO">ESTADO DEL TELEFONO</label>
-                                                <select class="form-control" id="IND_TELEFONO" name="IND_TELEFONO">
+                                                <select class="form-control" id="IND_TELEFONO" name="IND_TELEFONO" required>
                                                   <option>ACTIVO</option>
                                                   <option>INACTIVO</option>
                                                 </select>
@@ -207,6 +209,7 @@
                                                 @enderror
                                             </div>
                                         </div>
+
 
                                         <div class="col-6">
                                             <div class="form-group">
@@ -224,7 +227,7 @@
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="DEPARTAMENTO">DEPARTAMENTO</label>
-                                                <select class="form-control" id="DEPARTAMENTO" name="DEPARTAMENTO" >
+                                                <select class="form-control" id="DEPARTAMENTO" name="DEPARTAMENTO" required>
                                                   <option>Atlántida</option>
                                                   <option>Choluteca</option>
                                                   <option>Colón</option>
@@ -290,18 +293,6 @@
 
                                         <div class="col-6">
                                             <div class="form-group">
-                                                <label for="COD_AFILIADO">CÓDIGO DEL AFILIADO</label>
-                                                <input type="text" class="form-control" id="COD_AFILIADO" name="COD_AFILIADO" placeholder="" value="{{ old('COD_AFILIADO') }}" required|numeric>
-                                                <div class="valid-feedback">DATO VALIDO.</div>
-                                                <div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS.</div>
-                                                @error('COD_AFILIADO')
-                                                    <span class="text-danger">{{ $message }}</span>
-                                                @enderror
-                                            </div>
-                                        </div>
-
-                                        <div class="col-6">
-                                            <div class="form-group">
                                                 <label for="NUM_AFILIADO">NÚMERO DE AFILIADO</label>
                                                 <input type="text" class="form-control" id="NUM_AFILIADO" name="NUM_AFILIADO" placeholder="" value="{{ old('NUM_AFILIADO') }}" required|numeric>
                                                 <div class="valid-feedback">DATO VALIDO.</div>
@@ -312,13 +303,54 @@
                                             </div>
                                         </div>
 
+
+
                                         <div class="col-6">
                                             <div class="form-group">
-                                                <label for="COD_BENEFICIARIO">CODIGO DEL BENEFICIARIO</label>
-                                                <input type="text" class="form-control" id="COD_BENEFICIARIO" name="COD_BENEFICIARIO" placeholder="" value="{{ old('COD_BENEFICIARIO') }}" required>
+                                                <label for="DENOMINACION">DENOMINACION</label>
+                                                <select class="form-control" id="DENOMINACION" name="DENOMINACION" required>
+                                                  <option>DIST. CHOLUTECA</option>
+                                                  <option>DIST. METROSUR</option>
+                                                  <option>LINEA 1 (PLANTA I)</option>
+                                                  <option>OPERACIONES Y SERVI</option>
+                                                  <option>DIST. DANLI</option>
+                                                  <option>JARABES (PLANTA I)</option>                                                  
+                                                  <option>TRATAMIENTO DE AGUA</option>
+                                                  <option>CENTRO DE DISTRIBUCION</option>                                              
+                                                  <option>MERCADEO</option>                                                                                                                                          
+                                                </select>
+                                                <div class="valid-feedback">DATO VALIDO.</div>
+                                                <div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS.ELIJA UNA OPCIÓN</div>
+                                                @error('DENOMINACION')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        
+
+
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label for="NOM_COMPLETO_B1">NOMBRE BENEFICIARIO 1</label>
+                                                <input type="text" class="form-control" id="NOM_COMPLETO_B1" name="NOM_COMPLETO_B1" placeholder="" value="{{ old('NOM_COMPLETO_B1') }}" required>
                                                 <div class="valid-feedback">DATO VALIDO.</div>
                                                 <div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS.</div>
-                                                @error('COD_BENEFICIARIO')
+                                                @error('NOM_COMPLETO_B1')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label for="PORCENTAJE_B1">PORCENTAJE BENEFICIARIO 1</label>
+                                                <input type="text" class="form-control" id="PORCENTAJE_B1" name="PORCENTAJE_B1" placeholder="" value="{{ old('PORCENTAJE_B1') }}" required>
+                                                <div class="valid-feedback">DATO VALIDO.</div>
+                                                <div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS.</div>
+                                                @error('PORCENTAJE_B1')
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
@@ -327,11 +359,10 @@
 
                                         <div class="col-6">
                                             <div class="form-group">
-                                                <label for="NOM_COMPLETO">NOMBRE BENEFICIARIO</label>
-                                                <input type="text" class="form-control" id="NOM_COMPLETO" name="NOM_COMPLETO" placeholder="" value="{{ old('NOM_COMPLETO') }}" required>
+                                                <label for="NOM_COMPLETO_B2">NOMBRE BENEFICIARIO 2</label>
+                                                <input type="text" class="form-control" id="NOM_COMPLETO_B2" name="NOM_COMPLETO_B2" placeholder="" value="{{ old('NOM_COMPLETO_B2') }}">
                                                 <div class="valid-feedback">DATO VALIDO.</div>
-                                                <div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS.</div>
-                                                @error('NOM_COMPLETO')
+                                                @error('NOM_COMPLETO_B2')
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
@@ -341,11 +372,21 @@
 
                                         <div class="col-6">
                                             <div class="form-group">
-                                                <label for="PORCENTAJE">PORCENTAJE</label>
-                                                <input type="text" class="form-control" id="PORCENTAJE" name="PORCENTAJE" placeholder="" value="{{ old('PORCENTAJE') }}" required>
+                                                <label for="PORCENTAJE_B2">PORCENTAJE BENEFICIARIO 2</label>
+                                                <input type="text" class="form-control" id="PORCENTAJE_B2" name="PORCENTAJE_B2" placeholder="" value="{{ old('PORCENTAJE_B2') }}">
                                                 <div class="valid-feedback">DATO VALIDO.</div>
-                                                <div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS.</div>
-                                                @error('PORCENTAJE')
+                                                @error('PORCENTAJE_B2')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label for="NOM_COMPLETO_B3">NOMBRE BENEFICIARIO 3</label>
+                                                <input type="text" class="form-control" id="NOM_COMPLETO_B3" name="NOM_COMPLETO_B3" placeholder="" value="{{ old('NOM_COMPLETO_B3') }}">
+                                                <div class="valid-feedback">DATO VALIDO.</div>
+                                                @error('NOM_COMPLETO_B3')
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
@@ -355,15 +396,63 @@
 
                                         <div class="col-6">
                                             <div class="form-group">
-                                                <label for="COD_USUARIO">CODIGO USUARIO</label>
-                                                <input type="text" class="form-control" id="COD_USUARIO" name="COD_USUARIO" placeholder="" value="{{ old('COD_USUARIO') }}" required|numeric>
+                                                <label for="PORCENTAJE_B3">PORCENTAJE BENEFICIARIO 3</label>
+                                                <input type="text" class="form-control" id="PORCENTAJE_B3" name="PORCENTAJE_B3" placeholder="" value="{{ old('PORCENTAJE_B3') }}">
                                                 <div class="valid-feedback">DATO VALIDO.</div>
-                                                <div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS.</div>
-                                                @error('COD_USUARIO')
+                                                @error('PORCENTAJE_B3')
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
                                         </div>
+
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label for="NOM_COMPLETO_B4">NOMBRE BENEFICIARIO 4</label>
+                                                <input type="text" class="form-control" id="NOM_COMPLETO_B4" name="NOM_COMPLETO_B4" placeholder="" value="{{ old('NOM_COMPLETO_B4') }}">
+                                                <div class="valid-feedback">DATO VALIDO.</div>
+                                                @error('NOM_COMPLETO_B4')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label for="PORCENTAJE_B4">PORCENTAJE BENEFICIARIO 4</label>
+                                                <input type="text" class="form-control" id="PORCENTAJE_B4" name="PORCENTAJE_B4" placeholder="" value="{{ old('PORCENTAJE_B4') }}">
+                                                <div class="valid-feedback">DATO VALIDO.</div>
+                                                @error('PORCENTAJE_B4')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label for="NOM_COMPLETO_B5">NOMBRE BENEFICIARIO 5</label>
+                                                <input type="text" class="form-control" id="NOM_COMPLETO_B5" name="NOM_COMPLETO_B5" placeholder="" value="{{ old('NOM_COMPLETO_B5') }}">
+                                                <div class="valid-feedback">DATO VALIDO.</div>
+                                                @error('NOM_COMPLETO_B5')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label for="PORCENTAJE_B5">PORCENTAJE BENEFICIARIO 5</label>
+                                                <input type="text" class="form-control" id="PORCENTAJE_B5" name="PORCENTAJE_B5" placeholder="" value="{{ old('PORCENTAJE_B5') }}">
+                                                <div class="valid-feedback">DATO VALIDO.</div>
+                                                @error('PORCENTAJE_B5')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
 
                                         <div class="col-6">
                                             <div class="form-group">
@@ -377,10 +466,27 @@
                                             </div>
                                         </div>
 
+
+
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label for="NOM_USUARIO">NOMBRE DE USUARIO</label>
+                                                <input type="txt" class="form-control" id="NOM_USUARIO" name="NOM_USUARIO" placeholder="" value="{{ old('NOM_USUARIO') }}" required>
+                                                <div class="valid-feedback">DATO VALIDO.</div>
+                                                <div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS.</div>
+                                                @error('NOM_USUARIO')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+
+
+
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="TIP_USUARIO">TIPO USUARIO</label>
-                                                <select class="form-control" id="TIP_USUARIO" name="TIP_USUARIO">
+                                                <select class="form-control" id="TIP_USUARIO" name="TIP_USUARIO" required>
                                                   <option>ADMINISTRADOR</option>
                                                   <option>COMISIONADO</option>
                                                   <option>DIRECTIVO</option>
@@ -396,7 +502,7 @@
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="IND_USUARIO">ESTADO DEL USUARIO</label>
-                                                <select class="form-control" id="IND_USUARIO" name="IND_USUARIO">
+                                                <select class="form-control" id="IND_USUARIO" name="IND_USUARIO" required>
                                                   <option>ACTIVO</option>
                                                   <option>INACTIVO</option>
                                                 </select>
@@ -419,8 +525,6 @@
                                                 @enderror
                                             </div>
                                         </div>
-
-
                                                                                                                         
                                     </div>
                                 </div>
@@ -443,3 +547,4 @@
         // Puedes agregar scripts personalizados aquí si es necesario
     </script>
 @stop
+

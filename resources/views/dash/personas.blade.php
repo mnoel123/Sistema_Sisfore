@@ -45,12 +45,21 @@
     <td class="border border-dark">MUNICIPIO</td>
     <td class="border border-dark">COLONIA</td>
     <td class="border border-dark">DESCRIPCION DE DIRECCION</td>
-    <td class="border border-dark">COD DE AFILIADO</td>
+    <td class="border border-dark">CODIGO DE AFILIADO</td>
     <td class="border border-dark">NUMERO DE AFILIADO</td>
+    <td class="border border-dark">DENOMINACION</td>
     <td class="border border-dark">CODIGO DE BENEFICIARIO</td>
-    <td class="border border-dark">NOMBRE BENEFICIARIO</td>
-    <td class="border border-dark">PORCENTAJE</td>
-    <td class="border border-dark">COD DE USUARIO</td>
+    <td class="border border-dark">NOMBRE BENEFICIARIO 1</td>
+    <td class="border border-dark">PORCENTAJE BENEFICIARIO 1</td>
+    <td class="border border-dark">NOMBRE BENEFICIARIO 2</td>
+    <td class="border border-dark">PORCENTAJE BENEFICIARIO 2</td>    
+    <td class="border border-dark">NOMBRE BENEFICIARIO 3</td>
+    <td class="border border-dark">PORCENTAJE BENEFICIARIO 3</td>    
+    <td class="border border-dark">NOMBRE BENEFICIARIO 4</td>
+    <td class="border border-dark">PORCENTAJE BENEFICIARIO 4</td>    
+    <td class="border border-dark">NOMBRE BENEFICIARIO 5</td>
+    <td class="border border-dark">PORCENTAJE BENEFICIARIO 5</td>
+    <td class="border border-dark">CODIGO DE USUARIO</td>
     <td class="border border-dark">CONTRASEÑA</td>
     <td class="border border-dark">NOMBRE DE USUARIO</td>
     <td class="border border-dark">TIPO DE USUARIO</td>
@@ -88,9 +97,18 @@
                                 <td class="inner-table text-center" >{{$personas["DES_DIRECCION"]}}</td>
                                 <td class="inner-table text-center" >{{$personas["COD_AFILIADO"]}}</td>
                                 <td class="inner-table text-center" >{{$personas["NUM_AFILIADO"]}}</td>
+                                <td class="inner-table text-center" >{{$personas["DENOMINACION"]}}</td>
                                 <td class="inner-table text-center" >{{$personas["COD_BENEFICIARIO"]}}</td>
-                                <td class="inner-table text-center" >{{$personas["NOM_COMPLETO"]}}</td>
-                                <td class="inner-table text-center" >{{$personas["PORCENTAJE"]}}</td>
+                                <td class="inner-table text-center" >{{$personas["NOM_COMPLETO_B1"]}}</td>
+                                <td class="inner-table text-center" >{{$personas["PORCENTAJE_B1"]}}</td>
+                                <td class="inner-table text-center" >{{$personas["NOM_COMPLETO_B2"]}}</td>
+                                <td class="inner-table text-center" >{{$personas["PORCENTAJE_B2"]}}</td>
+                                <td class="inner-table text-center" >{{$personas["NOM_COMPLETO_B3"]}}</td>
+                                <td class="inner-table text-center" >{{$personas["PORCENTAJE_B3"]}}</td>
+                                <td class="inner-table text-center" >{{$personas["NOM_COMPLETO_B4"]}}</td>
+                                <td class="inner-table text-center" >{{$personas["PORCENTAJE_B4"]}}</td>
+                                <td class="inner-table text-center" >{{$personas["NOM_COMPLETO_B5"]}}</td>
+                                <td class="inner-table text-center" >{{$personas["PORCENTAJE_B5"]}}</td>
                                 <td class="inner-table text-center" >{{$personas["COD_USUARIO"]}}</td>
                                 <td class="inner-table text-center" >{{$personas["CONTRASENA"]}}</td>
                                 <td class="inner-table text-center" >{{$personas["NOM_USUARIO"]}}</td>
@@ -122,3 +140,4 @@
 </div>
 
 @endsection
+

@@ -60,9 +60,18 @@ class PersonasController extends Controller
            'DES_DIRECCION'=> $request->DES_DIRECCION,
            'COD_AFILIADO'=> $request->COD_AFILIADO,
            'NUM_AFILIADO'=> $request->NUM_AFILIADO,
+           'DENOMINACION'=> $request->DENOMINACION,
            'COD_BENEFICIARIO'=> $request->COD_BENEFICIARIO,
-           'NOM_COMPLETO'=> $request->NOM_COMPLETO,
-           'PORCENTAJE'=> $request->PORCENTAJE,
+           'NOM_COMPLETO_B1'=> $request->NOM_COMPLETO_B1,
+           'PORCENTAJE_B1'=> $request->PORCENTAJE_B1,
+           'NOM_COMPLETO_B2'=> $request->NOM_COMPLETO_B2,
+           'PORCENTAJE_B2'=> $request->PORCENTAJE_B2,
+           'NOM_COMPLETO_B3'=> $request->NOM_COMPLETO_B3,
+           'PORCENTAJE_B3'=> $request->PORCENTAJE_B3,
+           'NOM_COMPLETO_B4'=> $request->NOM_COMPLETO_B4,
+           'PORCENTAJE_B4'=> $request->PORCENTAJE_B4,
+           'NOM_COMPLETO_B5'=> $request->NOM_COMPLETO_B5,
+           'PORCENTAJE_B5'=> $request->PORCENTAJE_B5,
            'COD_USUARIO'=> $request->COD_USUARIO,
            'CONTRASENA'=> $request->CONTRASENA,
            'NOM_USUARIO'=> $request->NOM_USUARIO,
@@ -74,10 +83,11 @@ class PersonasController extends Controller
            'FEC_REGISTRO'=> $request->FEC_REGISTRO,
        ]); 
        
-          return redirect()-> route('personas')->with('agregado','los registros fueron agregados correctamente'); 
+          return redirect()-> route('personas')->with('agregado','los regristros fue agregados correctamente'); 
 
           // Obténer la última IP del usuario y guárdarla en el modelo
-
+$lastIp = $request->ip();
+$tuModelo->update(['IP_ULT_ACCESS' => $lastIp]);
         
    }
 
@@ -98,14 +108,13 @@ class PersonasController extends Controller
    public function update(Request $request,$COD_PERSONA)
    {
     $personas = Http::put('http://localhost:3000/personas/personas'.$COD_PERSONA, [
-        'COD_PERSONA'=> $request->COD_PERSONA,
+        
         'OPERACION'=> $request->OPERACION,
+        'COD_PERSONA'=> $request->COD_PERSONA,
         'NUM_IDENTIDAD'=> $request->NUM_IDENTIDAD,
         'NOM_PERSONA'=> $request->NOM_PERSONA,
         'APE_PERSONA'=> $request->APE_PERSONA,
-
         'SEX_PERSONA'=> $request->SEX_PERSONA,
-
         'FEC_NACIMIENTO'=> $request->FEC_NACIMIENTO,
         'TIP_ESTADO'=> $request->TIP_ESTADO,
         'ESTADO_CIVIL'=> $request->ESTADO_CIVIL,
@@ -122,9 +131,18 @@ class PersonasController extends Controller
         'DES_DIRECCION'=> $request->DES_DIRECCION,
         'COD_AFILIADO'=> $request->COD_AFILIADO,
         'NUM_AFILIADO'=> $request->NUM_AFILIADO,
+        'DENOMINACION'=> $request->DENOMINACION,
         'COD_BENEFICIARIO'=> $request->COD_BENEFICIARIO,
-        'NOM_COMPLETO'=> $request->NOM_COMPLETO,
-        'PORCENTAJE'=> $request->PORCENTAJE,
+        'NOM_COMPLETO_B1'=> $request->NOM_COMPLETO_B1,
+        'PORCENTAJE_B1'=> $request->PORCENTAJE_B1,
+        'NOM_COMPLETO_B2'=> $request->NOM_COMPLETO_B2,
+        'PORCENTAJE_B2'=> $request->PORCENTAJE_B2,
+        'NOM_COMPLETO_B3'=> $request->NOM_COMPLETO_B3,
+        'PORCENTAJE_B3'=> $request->PORCENTAJE_B3,
+        'NOM_COMPLETO_B4'=> $request->NOM_COMPLETO_B4,
+        'PORCENTAJE_B4'=> $request->PORCENTAJE_B4,
+        'NOM_COMPLETO_B5'=> $request->NOM_COMPLETO_B5,
+        'PORCENTAJE_B5'=> $request->PORCENTAJE_B5,
         'COD_USUARIO'=> $request->COD_USUARIO,
         'CONTRASENA'=> $request->CONTRASENA,
         'NOM_USUARIO'=> $request->NOM_USUARIO,
@@ -136,7 +154,7 @@ class PersonasController extends Controller
         'FEC_REGISTRO'=> $request->FEC_REGISTRO,
 ]); 
 
-       return redirect()-> route('personas')->with('editado','los registros fueron editado correctamente'); 
+       return redirect()-> route('personas')->with('editado','los registros fue editado correctamente'); 
    }
 
    /**
