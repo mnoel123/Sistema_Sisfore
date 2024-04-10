@@ -16,4 +16,11 @@ class BroadcastServiceProvider extends ServiceProvider
 
         require base_path('routes/channels.php');
     }
+
+    protected $listen = [
+        'App\Events\UserCreated' => [
+            'App\Listeners\SetNewUserStatus',
+        ],
+    ];
+    
 }

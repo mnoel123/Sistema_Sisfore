@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'SISFORE',
+    'title' => 'SISFORE-STIBYS',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -63,8 +63,8 @@ return [
     |
     */
 
-    'logo' => '<b>SISFORE</b>STIBYS',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLOGO.png',  
+    'logo' => '<b>SISFORE-STIBYS</b>',
+    'logo_img' => 'vendor/adminlte/dist/img/SISFORE.jpeg',  
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -86,10 +86,10 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/menu.jpg',
+           'path' => 'vendor/adminlte/dist/img/menu.jpg',
             'alt' => 'Auth Logo',
             'class' => '',
-            'width' => 50,
+          'width' => 50,
             'height' => 50,
         ],
     ],
@@ -108,13 +108,13 @@ return [
 
     'preloader' => [
         'enabled' => true,
-        'img' => [
+       'img' => [
             'path' => 'img/logo_s.png',
             'alt' => 'AdminLTE Preloader Image',
-            'effect' => 'animation__shake',
-            'width' => 60,
-            'height' => 60,
-        ],
+          'effect' => 'animation__shake',
+           'width' => 90,
+           'height' => 90,
+      ],
     ],
 
     /*
@@ -254,7 +254,6 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -303,22 +302,22 @@ return [
         ],
 
         // Sidebar items:
-        [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
+        // [
+         //    'type' => 'sidebar-menu-search',
+        //     'text' => 'search',
+       //  ],
+        // [
+           //  'text' => 'blog',
+           //  'url'  => 'admin/blog',
+           //  'can'  => 'manage-blog',
+        // ],
+       //  [
+            // 'text'        => 'pages',
+            // 'url'         => 'admin/pages',
+            // 'icon'        => 'far fa-fw fa-file',
+            // 'label'       => 4,
+          //   'label_color' => 'success',
+       //  ],
         ['header' => 'account_settings'],
         [
             'text' => 'Personas',
@@ -328,33 +327,70 @@ return [
         ],
 
         [
-            'text' => 'Edit profile',
+            'text' => 'Editar Perfil',
             'url'  => 'profile',
             'icon' => 'fas fa-solid fa-pen',
         ],
         
-        // [
-        //     'text' => 'Seguridad',
-        //     'url'  => '#',
-        //     'icon' => 'fas fa-fw fa-lock',
-        // ],
+       
+        [
+            'text' => 'Seguridad',
+            'icon' => 'fas fa-fw fa-lock',
+            'submenu' => [
+
+                [
+                    'text'    => 'Gestionar Usuarios',
+                    'icon'=> 'fas fa-fw fa-user',
+                    'url'     => 'Usuarios',
+                ],
+                [
+                    'text'    => 'Personas',
+                    'icon'=> 'fas fa-users',
+                    'url'     => 'Persona',
+                ],
+                 [
+                     'text'    => 'Asignar Roles',
+                     'icon'=> 'fas fa-users-cog',
+                     'url'     => 'Roles',
+                 ],
+                 [
+                     'text'    => 'Preguntas',
+                     'icon'=> 'far fa-question-circle',
+                     'url'     => 'Preguntas',
+                 ],
+                 [
+                        'text' => 'Parametros',
+                        'icon' => 'fas fa-cogs',
+                        'url'  => 'Parametros',
+                ],
+
+            ],
+        ],
         
         [
             'text' => 'Aportaciones',
             'icon' => 'fas fa-regular fa-file',
 
             'submenu' => [
-            
+
                 [
+                
                     'text'    => 'Gestionar Planillas',
                     'icon'=> 'fas fa-solid fa-file-excel',
                     'url'     => 'gestionar',
                 ],
-                // [
-                //     'text'    => 'planillas',
-                //     'icon'=> 'fas fa-solid fa-file-excel',
-                //     'url'     => 'planillas',
-                //= ],
+
+
+                [
+                    'text'    => 'Consultar Planillas',
+                    'icon'    => 'fas fa-book',
+                    'icon_color' => 'white',
+                    'url'     => 'planillas',
+                ],
+                
+                
+               
+               
             ],
         ],
         [
@@ -368,12 +404,7 @@ return [
         //     'icon' => 'fas fa-solid fa-list',
         // ],
        
-        [
-            'text' => 'Reportes',
-            'url'  => 'reportes',
-            'icon' => 'fas fa-solid fa-print',
-        ],
-    
+      
          [
                 'text' => 'Bitacora',
                 'url'  => 'bitacora',

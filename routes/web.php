@@ -6,8 +6,16 @@ use App\Http\Controllers\admin\PlanillasController;
 use App\Http\Controllers\admin\ImportController;
 use App\Http\Controllers\EstadosFinancierosController;
 use App\Http\Controllers\admin\CuentasController;
+use App\Http\Controllers\PersonaController;
+use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\RolesController;
+use App\Http\Controllers\PreguntasController;
+use App\Http\Controllers\PreguntasResController;
+use App\Http\Controllers\ParametrosController;
 use App\Http\Controllers\admin\PersonasController;
-
+use App\Http\Controllers\admin\ReportePlanillasController;
+use App\Http\Controllers\admin\ReporteListaPController;
+use App\Http\Controllers\ReporteUsuarioController;
 use App\Models\planillas;
 /*
 |--------------------------------------------------------------------------
@@ -29,12 +37,31 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+    // Otras rutas del perfil
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // Ruta para actualizar la contraseña
+    Route::put('/profile/password/update', [ProfileController::class, 'updatePassword'])->name('profile.password.update');
+   
 });
 
 require __DIR__.'/auth.php';
+Route::resource('Usuarios',UsuarioController::class);
+//generacion de reporte usuarios 
+Route::get('/generar-usuariopdf', [ReporteUsuarioController::class, 'generarPdf']);
+    Route::resource('Roles',RolesController::class);
+    Route::resource('Preguntas',PreguntasController::class);
+    Route::resource('Pregunta-respuesta',PreguntasResController::class);
+    Route::resource('Persona',PersonaController::class);
+    Route::resource('Parametros',ParametrosController::class);
+
+
+Route::get('/usuario/inactivo', function () {
+    return redirect()->route('login')->with('status', 'Su cuenta está inactiva. Por favor, comuníquese con el administrador.');
+})->name('usuario.inactivo');
+
 
 
 //vistas de personas
@@ -56,6 +83,37 @@ Route::put('personas/update/{COD_PERSONA}', [App\Http\controllers\admin\Personas
 
 Route::delete('/eliminar/personas/{COD}', [PersonaController::class, 'eliminarPersona'])
     ->name('eliminar.personas');
+
+
+
+
+
+//vistas de planillas
+Route::resource('users',UsuarioController::class)->names('users');
+
+Route::get('/users', [App\Http\controllers\admin\UsuarioController::class, 'index']);
+
+
+//insertar nuevos registros 
+Route::resource('users',UsuarioController::class)->names('create');
+//Route::post('planillas', [PlanillasController::class, 'store']);
+Route::post('users', [UsuarioController::class, 'store'])->name('users');
+
+
+//Route::get('/planillas/{COD_PLANILLA}', [PlanillasController::class, 'show'])->name('dash.show');
+
+//ruta para actualizar en planillas
+
+Route::get('users/edit/{id}', [App\Http\controllers\admin\UsuarioController::class, 'edit']);
+Route::put('users/update/{id}', [App\Http\controllers\admin\UsuarioController::class, 'update']);
+
+
+//ruta para Eliminar planillas y aportaciones 
+Route::delete('users/destroy/{id}', [App\Http\controllers\admin\UsuarioController::class, 'destroy']);
+
+
+
+
 
 
 
@@ -93,6 +151,9 @@ Route::post('dash/importData', [ImportController::class, 'importData'])->name('d
 Route::get('gestionar', [ImportController::class, 'gestionar'])->name('gestionar');
 
 Route::get('gestionar', [ImportController::class, 'obtenerplanilla'])->name('gestionar');
+
+Route::get('/generar-pdf', [ReportePlanillasController::class, 'generarPdf']);
+Route::get('/generarlista-pdf', [ReporteListaPController::class, 'generarPdf']);
 
 
 

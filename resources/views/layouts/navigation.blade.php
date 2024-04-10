@@ -7,42 +7,39 @@
             <div class="flex">
                 
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center" style="background-color: #8B1E06;">
+                <div class="shrink-0 flex items-center"  style="background-color: #8B1E06;">
                   
                         <img src="img/menu.jpg "   alt="Mi Imagen" class="block h-9 w-auto fill-current text-gray-800" />
                     
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-5  sm:ms-10 sm:flex " style="background-color: #8B1E06;  font-weight: bold; font-family='Georgia', sans-serif; text-align= center; ">
+                <div class="hidden space-x-5  sm:ms-10 sm:flex " style=" display: flex; gap: 1rem; background-color: #8B1E06;  font-weight: bold; font-family='Georgia', sans-serif; text-align= center; ">
                    
-                   <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="text-white " >
-                        {{ __('SISFORE') }}
-                    </x-nav-link>
+                <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" style="color: white;font-weight: bold;  font-size: 16px; font-family: Arial, sans-serif;" onmouseover="this.style.color='LemonChiffon';" onmouseout="this.style.color='white';">
+                     {{ __('SISFORE') }}
+                 </x-nav-link>
 
+                <x-nav-link :href="route('personas')" :active="request()->routeIs('personas')" style="color: white;  font-weight: bold; font-size: 16px; font-family: Arial, sans-serif;" onmouseover="this.style.color='LemonChiffon';" onmouseout="this.style.color='white';">
+                    {{ __('PERSONAS') }}
+                 </x-nav-link>
 
-                    <x-nav-link :href="route('personas')" :active="request()->routeIs('personas')" class="text-white">
-                        {{ __('PERSONAS') }}
-                    </x-nav-link>
+                <x-nav-link :href="route('planillas')" :active="request()->routeIs('planillas')" style="color: white; font-size: 16px; font-weight: bold; font-family: Arial, sans-serif;" onmouseover="this.style.color='LemonChiffon';" onmouseout="this.style.color='white';">
+                    {{ __('PLANILLAS') }}
+                </x-nav-link>
 
-                    
+                 <x-nav-link :href="route('cuentas')" :active="request()->routeIs('cuentas')" style="color: white; font-size: 16px;  font-weight: bold; font-family: Arial, sans-serif;" onmouseover="this.style.color='LemonChiffon';" onmouseout="this.style.color='white';">
+                    {{ __('ESTADOS FINANCIEROS') }}
+                </x-nav-link>
 
-                    <x-nav-link :href="route('planillas')" :active="request()->routeIs('planillas')" class="text-white">
-                        {{ __('PLANILLAS') }}
-                    </x-nav-link>
+                 <x-nav-link :href="route('reportes')" :active="request()->routeIs('reportes')" style="color: white; font-weight: bold; font-size: 16px; font-family: Arial, sans-serif;" onmouseover="this.style.color='LemonChiffon';" onmouseout="this.style.color='white';">
+                    {{ __('REPORTES') }}
+                 </x-nav-link>
 
-                    <x-nav-link :href="route('cuentas')" :active="request()->routeIs('cuentas')" class="text-white">
-                        {{ __('ESTADOS FINANCIEROS') }}
-                    </x-nav-link>
+                <x-nav-link :href="route('bitacora')" :active="request()->routeIs('bitacora')" style="color: white; font-size: 16px; font-weight: bold; font-family: Arial, sans-serif;" onmouseover="this.style.color='LemonChiffon';" onmouseout="this.style.color='white';">
+                    {{ __('BITACORA') }}
+                </x-nav-link>
 
-
-                    <x-nav-link :href="route('reportes')" :active="request()->routeIs('reportes')" class="text-white">
-                        {{ __('REPORTES') }}
-                    </x-nav-link>
-
-                    <x-nav-link :href="route('bitacora')" :active="request()->routeIs('bitacora')" class="text-white">
-                        {{ __('BITACORA') }}
-                    </x-nav-link>
                 </div>
             </div>
 
@@ -62,20 +59,22 @@
                         </button>
                     </x-slot>
 
-                    <x-slot name="content" >
+                    <x-slot name="content"  class="text-gray-900" >
                        
 
                         <!-- Authentication -->
-                        <form method="POST" action="{{ route('logout') }}">
+                        <form method="POST"  action="{{ route('logout') }}" >
                             @csrf
 
-                            <x-dropdown-link :href="route('logout')"
+                            <x-dropdown-link :href="route('logout') "
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('Cerrar Sesion') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
+
+
                 </x-dropdown>
             </div>
 
@@ -95,20 +94,20 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+                {{ __('Panel de Control') }}
             </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
-            <div class="px-4">
-                <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
+            <div class="px-4 ">
+                <div class="font-medium text-base ">{{ Auth::user()->name }}</div>
+                <div class="font-medium text-sm ">{{ Auth::user()->email }}</div>
             </div>
 
-            <div class="mt-3 space-y-1">
+            <div class="mt-3 space-y-1 text-gray-900">
                 <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
+                    {{ __('Perfil') }}
                 </x-responsive-nav-link>
 
                 <!-- Authentication -->
@@ -118,7 +117,7 @@
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Log Out') }}
+                        {{ __('Cerrar Sesion') }}
                     </x-responsive-nav-link>
                 </form>
             </div>

@@ -1,7 +1,7 @@
 
 @extends('adminlte::page')
 
-@section('title', 'SISFORE STIBYS')
+@section('title', 'SISFORE-STIBYS')
 
 @section('content_header')
     <h1 class='text-center'  font-family= 'Constantia' ></h1>

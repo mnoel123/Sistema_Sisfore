@@ -10,7 +10,7 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-:root {
+ :root {
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -45,6 +45,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  color: #FFFFFF;
+  font-size:16px;
 }
 
 html {
@@ -159,13 +161,15 @@ sup {
 }
 
 a {
-  color: #007bff;
+  color: #ffffff;
   text-decoration: none;
   background-color: transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
 }
 
 a:hover {
-  color: #0056b3;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -11795,11 +11799,16 @@ body:not(.layout-fixed) .main-sidebar {
   height: inherit;
   min-height: 100%;
   position: absolute;
-  top: 0;
+  top: 10;
+  background-color:#8B1E06 ;
+  color: white;
+  font-size: 18px;
+  font-family: ui-sans-serif;;
 }
 
 body:not(.layout-fixed) .main-sidebar .sidebar {
   overflow-y: auto;
+  
 }
 
 .layout-fixed .brand-link {
@@ -12680,6 +12689,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 
 .nav-sidebar .menu-open > .nav-treeview {
   display: block;
+  margin: 20px;;
 }
 
 .nav-sidebar .menu-open > .nav-link svg.right,
@@ -15015,6 +15025,9 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 
 .nav-sidebar .nav-item > .nav-link {
   position: relative;
+  color:white;
+  font-size:18px;
+  font-family:san-serif;
 }
 
 .nav-sidebar .nav-item > .nav-link > .float-right {
@@ -15178,6 +15191,7 @@ body.text-sm .control-sidebar {
 
 .control-sidebar-dark .nav-tabs .nav-link, .control-sidebar-dark .nav-tabs .nav-link:hover, .control-sidebar-dark .nav-tabs .nav-link:active, .control-sidebar-dark .nav-tabs .nav-link:focus, .control-sidebar-dark .nav-tabs .nav-link.active {
   border: 0;
+  
 }
 
 .control-sidebar-dark .nav-tabs .nav-link:hover, .control-sidebar-dark .nav-tabs .nav-link:active, .control-sidebar-dark .nav-tabs .nav-link:focus, .control-sidebar-dark .nav-tabs .nav-link.active {
@@ -15477,7 +15491,7 @@ body.text-sm .control-sidebar {
 }
 
 .nav-pills .nav-link:not(.active):hover {
-  color: #007bff;
+  color: #FCF3CF ;
 }
 
 .nav-pills .nav-item.dropdown.show .nav-link:hover {

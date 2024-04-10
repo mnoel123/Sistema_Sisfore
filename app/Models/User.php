@@ -10,6 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable  implements MustVerifyEmail
 {
+
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -19,8 +20,11 @@ class User extends Authenticatable  implements MustVerifyEmail
      */
     protected $fillable = [
         'name',
+        'nom_usuario',
         'email',
         'password',
+        'estado',
+        
     ];
 
     /**
@@ -43,3 +47,5 @@ class User extends Authenticatable  implements MustVerifyEmail
         'password' => 'hashed',
     ];
 }
+
+

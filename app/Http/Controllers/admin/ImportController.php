@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\planillas;
 use App\Imports\planillasImport;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Session;
 
 
 class ImportController extends Controller
@@ -23,6 +24,8 @@ class ImportController extends Controller
  {
    
          Excel::import(new planillasImport, request()->file('excel'));
+          // Después de la importación exitosa, establecer el mensaje de sesión
+        Session::flash('import_success', 'La planilla se importó exitosamente.');
  
          return redirect()->to(url('gestionar'))->with('success', 'Datos importados correctamente.');
  }
@@ -53,9 +56,10 @@ public function eliminargestionar($COD_PLANILLA)
 {
     $planillas=planillas::findOrFail($COD_PLANILLA);
     $planillas->delete();
-    //$planillas = Http::delete('http://localhost:3000/planillas'. $COD_PLANILLA);
+   
 
-    return redirect()-> route('gestionar')->with('eliminado','El registro fue eliminado correctamente'); 
+    return redirect()-> route('gestionar')->with('delete_success', 'Registro eliminado exitosamente.');
+    
 }
 
 }

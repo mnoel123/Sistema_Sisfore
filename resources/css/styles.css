@@ -1,0 +1,15 @@
+/* Estilo para la alerta en la esquina izquierda */
+.fixed-left-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ajusta según sea necesario para que esté por encima de otros elementos */
+    background-color: #8B1E06; /* Color de fondo para la alerta */
+    color: white; /* Color del texto */
+    border-radius: 0; /* Bordes redondeados, ajusta según sea necesario */
+}
+
+/* Evitar fondo negro en el modal */
+.modal-backdrop {
+    display: none;
+}

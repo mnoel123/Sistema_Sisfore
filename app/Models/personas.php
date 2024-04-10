@@ -11,8 +11,8 @@ class personas extends Model
     protected $primaryKey='COD_PERSONA';
     public $timestamps = false;
     protected $fillable =[
-    	'COD_PERSONA',
         'OPERACION',
+    	'COD_PERSONA',
         'NUM_IDENTIDAD',
         'NOM_PERSONA',
         'APE_PERSONA',

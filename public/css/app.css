@@ -1,0 +1,64 @@
+/* custom.css */
+body {
+    background-color:  hsl(11, 93%, 18%); 
+}
+.container {
+    background-color: #ffffff; /* Cambia el color de fondo del contenedor principal a blanco */
+    padding: 20px; /* Agrega un poco de espacio alrededor del contenido */
+    border-radius: 10px; /* Agrega bordes redondeados al contenedor */
+    box-shadow: 0 0 10px rgba(17, 15, 15, 0.1); /* Agrega sombra al contenedor */
+}
+/* Evitar fondo negro en el modal */
+.modal-backdrop {
+    display: none;
+}
+
+
+/* Estilos para la tabla */
+#planillas {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Estilos para las celdas */
+#planillas td, #planillas th {
+    border: 1px solid #272626;
+    padding: 8px;
+}
+
+
+/* Estilos para los botones */
+.custom-btn {
+    margin-right: 5px;
+}
+
+    /* Estilos para los botones */
+    .btn-warning,
+    .btn-secondary {
+        width: 88px; /* Establece un ancho específico para los botones */
+        height: 30px; /* Establece una altura específica para los botones */
+        margin-bottom: 5px; /* Agrega un margen inferior de 10px para separar los botones */
+        /* Otros estilos según sea necesario */
+    }
+    .btn-purple {
+    background-color: purple;
+    width: 88px; /* Establece un ancho específico para los botones */
+        height: 30px; /* Establece una altura específica para los botones */
+    color: white; /* Cambia el color del texto si es necesario para que sea legible */
+    /* Otros estilos según sea necesario */
+}
+
+
+.btn-vino {
+    background-color: #800020; /* Este es un ejemplo de un color rojo vino, puedes ajustarlo según tus necesidades */
+    color: #fff; /* Color del texto, asegúrate de que sea legible */
+    border-color: #800020; /* Color del borde, puede ser el mismo que el fondo para un efecto sin borde */
+}
+
+.dataTables_filter {
+            text-align: center;
+            float: right;
+        }
+
+
+      

@@ -27,7 +27,7 @@ class PlanillasController extends Controller
     {
         //
 
-        return view('dash.create');
+        return view('dash.createPlanilla');
 
 
     }
@@ -48,7 +48,7 @@ class PlanillasController extends Controller
            'USR_REGISTRO' => $request->USR_REGISTRO,         
        ]); 
        
-          return redirect()-> route('planillas')->with('agregado','los regristros fue agregados correctamente'); 
+          return redirect()-> route('gestionar')->with('agregado','El Regristro fue agregados correctamente'); 
 
         
    }
@@ -59,6 +59,7 @@ class PlanillasController extends Controller
     return view('dahs.show',['planillas'=>planillas::findOrFaild($COD_PLANILLA)]);
      
    }
+   
    public function edit($COD_PLANILLA)
    {
       $planillas = planillas::findOrFail($COD_PLANILLA);
@@ -79,7 +80,11 @@ class PlanillasController extends Controller
     $planillas ->COD_PLANILLA=$request->input('COD_PLANILLA');
     $planillas ->USR_REGISTRO=$request->input('USR_REGISTRO');
     $planillas ->save();
-       return redirect()-> route('planillas')->with('editado','los registros fue editado correctamente'); 
+    
+
+       return redirect()-> route('gestionar')->with('editado','El registro fue editado correctamente');
+       
+       
    }
 
 
@@ -112,16 +117,16 @@ class PlanillasController extends Controller
     * @return \Illuminate\Http\Response
     */
 
-   public function destroy($COD_PLANILLA)
-   {
-       $planillas=planillas::findOrFail($COD_PLANILLA);
-       $planillas->delete();
-       //$planillas = Http::delete('http://localhost:3000/planillas'. $COD_PLANILLA);
-
-       return redirect()-> route('planillas')->with('eliminado','El registro fue eliminado correctamente'); 
-   }
-
+    public function destroy($COD_PLANILLA)
+    {
+        $planillas = planillas::findOrFail($COD_PLANILLA);
+        $deletedPersonName = $planillas->NOM_COMPLETO; // Obtener el nombre de la persona antes de eliminar el registro
+        $planillas->delete();
+    
+        return redirect()->route('gestionar')->with(['delete_success' => 'Registro de "' . $deletedPersonName . '" eliminado exitosamente.', 'deleted_person_name' => $deletedPersonName]);
+    }
+    
 }
-
+    
 
 

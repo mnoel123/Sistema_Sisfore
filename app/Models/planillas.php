@@ -9,6 +9,7 @@ class planillas extends Model
 {   
     protected $table='planillas';
     protected $primaryKey='COD_PLANILLA';
+    public $incrementing = true;
     public $timestamps = false;
     protected $fillable =[
     'COD_PLANILLA',
@@ -18,7 +19,6 @@ class planillas extends Model
     'FEC_PAGO',
     'DENOMINACION',
     'VAL_PAGADO',
-    'VAL_APOR_MENSUAL',
     'USR_REGISTRO',
     'FEC_REGISTRO',
     ];

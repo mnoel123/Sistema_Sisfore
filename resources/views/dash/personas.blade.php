@@ -4,6 +4,7 @@
 @section('title', 'Lista de Personas')
 
 @section('content')
+
 <div class="row">
 
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
@@ -18,13 +19,13 @@
 
  </div>
 </div>
+
 <div class='container'>
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 <div class="table-responsive">
 
-<Table class="table table-sm table-striped table-hover">
-<thead class="bg-primary text-white" style="background-color: #8B1E06 !important;">
- 
+<table id="mitabla" Table class="table table-striped table-bordered table-hover rounded">
+ <thead class="bg-primary text-white" style="background-color: #8B1E06 !important;">
  <tr>
     <td class="border border-dark">CODIGO PERSONA</td>
     <td class="border border-dark">NUMERO DE IDENTIDAD</td>
@@ -118,9 +119,6 @@
                                 <td class="inner-table text-center" >{{$personas["IP_ULT_ACCESS"]}}</td>
                                 <td class="inner-table text-center" >{{$personas["USR_REGISTRO"]}}</td>
                                 <td class="inner-table text-center" >{{$personas["FEC_REGISTRO"]}}</td>
-       
-
-
                                 <td>
                                 <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#Modal-edit-{{$personas['COD_PERSONA']}}"> 
                                     Editar
@@ -134,10 +132,46 @@
                     @endforeach
                     </tbody>
                      </table>
-     </div>
+   
+                     </div>
+</div>
+
+    </script>
+
 </div>
 </div>
-</div>
+
 
 @endsection
+@section('js')
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.8/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.8/js/responsive.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#mitabla').DataTable({
+                responsive: true,
+                autoWidth: false,
+                "language": {
+                    "lengthMenu": "Registros por página _MENU_ ",
+                    "zeroRecords": "No se encontro registro",
+                    "info": "Mostrando la página _PAGE_ de _PAGES_",
+                           "search": "Buscar",
+                    "paginate": {
+                        "previous": "Anterior",
+                        "next": "Siguiente"
+                    },
+                    "infoEmpty": "No hay registros",
+                    "infoFiltered": "(Filtrado de _MAX_ registros totales)"
+                },
+                "lengthMenu": [
+                    [5, 10, 50, -1],
+                    [5, 10, 50, "All"]
+                ]
 
+            });
+        });
+    </script>
+@endsection

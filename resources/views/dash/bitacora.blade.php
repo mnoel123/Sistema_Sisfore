@@ -1,10 +1,17 @@
 @extends('adminlte::page')
 @section('content')
+<head>
+<link rel="stylesheet" href="{{ ('css/app.css') }}">
+</head>
+<div class="row justify-content-center">
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 text-center">
+            <h3 style="font-weight: bold;">Bitácora</h3>
+        </div>
+    </div>
 <div class="content">
         <div class="container-fluid">
     <div class="row">
         <div class="col-md-6 font-weight-bold">
-        <th><h3>Bitacora</h3></th>
         </div>
         <div class="col-md-6 col-sm-12">
     <h5 id="fechaActual" style="text-align: right; margin-right: 30px; font-weight: bold;"></h5>
@@ -26,6 +33,25 @@
               <div class='content'>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 <div class="table-responsive">
+
+<div class="row align-items-end">
+    <div class="col-md-2 mb-3">
+        <label for="fecha_desde">Fecha desde:</label>
+        <input type="date" id="fecha_desde" class="form-control">
+    </div>
+    <div class="col-md-2 mb-3">
+        <label for="fecha_hasta">Fecha hasta:</label>
+        <input type="date" id="fecha_hasta" class="form-control">
+    </div>
+    <div class="col-md-2 mb-3">
+        <button type="button" id="filtrar" class="btn btn-md btn-vino py-0" style="height: 38px;">
+            <i class="fas fa-search"></i> 
+        </button>
+        <button type="button" id="actualizar" class="btn btn-md btn-info py-0" style="height: 38px;">
+            <i class="fas fa-sync-alt"></i> 
+        </button>
+    </div>
+</div>
 
 <table id="bitacora" Table class="table table-striped table-bordered table-hover rounded">
 
@@ -73,22 +99,21 @@
 </div>
 
 @endsection
+
 @section('js')
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.8/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.8/js/responsive.bootstrap4.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('#bitacora').DataTable({
+            var table = $('#bitacora').DataTable({
                 responsive: true,
                 autoWidth: false,
                 "language": {
                     "lengthMenu": "Registros por página _MENU_ ",
-                    "zeroRecords": "No se encontro registro",
+                    "zeroRecords": "No se encontró registro",
                     "info": "Mostrando la página _PAGE_ de _PAGES_",
-                           "search": "Buscar",
+                    "search": "Buscar",
                     "paginate": {
                         "previous": "Anterior",
                         "next": "Siguiente"
@@ -100,8 +125,23 @@
                     [5, 10, 50, -1],
                     [5, 10, 50, "All"]
                 ]
+            });
 
+            $('#filtrar').click(function() {
+                var fecha_desde = $('#fecha_desde').val();
+                var fecha_hasta = $('#fecha_hasta').val();
+
+                table.columns(4).search(fecha_desde);
+                table.columns(4).draw();
+
+                table.columns(4).search(fecha_hasta);
+                table.columns(4).draw();
+            });
+
+            $('#actualizar').click(function() {
+                table.search('').columns().search('').draw();
             });
         });
     </script>
 @endsection
+
