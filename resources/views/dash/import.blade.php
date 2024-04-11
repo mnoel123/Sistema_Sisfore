@@ -57,3 +57,15 @@
         }, 7000);
     </script>
 @endif
+@if(Session::has('error'))
+    <div class="alert alert-danger mt-3" role="alert"  style="background-color: #8B0000; font-weight: bold; color: white; font-size: 14px; max-width: 300px; position: fixed; top: 20px; right: 20px; z-index: 9999;">
+        {{ Session::get('error') }}
+    </div>
+
+    <script>
+        // Cerrar la alerta después de 5 segundos
+        setTimeout(function() {
+            document.querySelector('.alert-danger').style.display = 'none';
+        }, 5000);
+    </script>
+@endif
